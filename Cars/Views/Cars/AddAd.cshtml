@@ -1,0 +1,67 @@
+﻿@model Cars.Models.Car
+
+<h2 class="text-center">Add new ad</h2>
+<div class="border container" style="padding:30px;">
+    <form method="post" enctype="multipart/form-data" asp-controller="Cars" asp-action="AddedAd">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Brand"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Model"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Phone"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Price"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Info"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Info" class="form-control" />
+                <span asp-validation-for="Info" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label>Upload photo</label>
+            </div>
+            <div class="col-6">
+                <input class="form-control" name="files" type="file" />
+                <span class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <button type="submit" class="btn btn-primary form-control">Upload</button>
+            </div>
+        </div>
+    </form>
+</div>

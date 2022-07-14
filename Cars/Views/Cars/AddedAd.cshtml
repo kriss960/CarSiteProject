@@ -1,0 +1,45 @@
+﻿@model Cars.Models.Car
+@{
+    ViewData["Title"] = "AddedAd";
+}
+    <h1>Added successfully!</h1>
+    <h2>Delete password: @Model.Password</h2>
+<div>
+    <h3>@Html.DisplayFor(model => model.Brand)  @Html.DisplayFor(model => model.Model)</h3>
+    <hr />
+    @{
+        if (Model.Photo == null)
+        {
+            <img src="~/image-not-found.jpg" class="img-thumbnail" style="width: 100%; max-width: 600px; height: auto;" />
+        }
+        else
+        {
+            <img src='@Url.Action("getimage", "cars", new {id = Model.Id})' class="img-thumbnail" style="width: 100%; max-width: 600px; height: auto;" />
+        }
+    }
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Info)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Info)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
